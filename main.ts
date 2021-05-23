@@ -16,6 +16,7 @@ function Chapter_2 () {
     "to the non-physics realm!"
     ]
     Print_Script()
+    Select_Chapter()
 }
 function Select_Chapter () {
     story.showPlayerChoices("Chapter 1", "Chapter 2")
@@ -324,7 +325,7 @@ function Print_Scrolling_Text (text: string) {
     Heading = MakingText.createTextSprite(text)
     Heading.ay = -35
     Heading.top = 120
-    pause(500)
+    pause(1000)
 }
 let Heading: Sprite = null
 let Script: string[] = []
