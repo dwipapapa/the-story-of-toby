@@ -1,0 +1,32 @@
+{
+    "name": "The story of Toby",
+    "description": "",
+    "dependencies": {
+        "device": "*",
+        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.1"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "custom.ts",
+        "tilemap.g.jres",
+        "tilemap.g.ts",
+        "Make-Headings.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "branch": "v0.15.17",
+        "tag": "v0.15.17",
+        "commits": "https://github.com/microsoft/pxt-arcade/commits/1f3914fbbaf5b5d37356e3973b7845374d264298",
+        "target": "1.4.43",
+        "pxt": "5.30.43",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "blocksprj"
+}
