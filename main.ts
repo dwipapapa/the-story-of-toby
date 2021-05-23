@@ -1,10 +1,28 @@
-namespace SpriteKind {
-    export const TextSprite = SpriteKind.create()
+function Chapter_2 () {
+    Script = [
+    "When he woke up...",
+    "an old man said",
+    "\"you woke up young man\"",
+    "\"who are you?\" asked Toby",
+    "\"I am the old man of",
+    "the non-physics realm\"",
+    "\"welcome to the",
+    "non-physics realm\"",
+    "\"non-physics realm?\"",
+    "\"The world that does not",
+    "follow physics\"",
+    "Toby was",
+    "actually teleported",
+    "to the non-physics realm!"
+    ]
+    Print_Script()
 }
 function Select_Chapter () {
     story.showPlayerChoices("Chapter 1", "Chapter 2")
     if (story.checkLastAnswer("Chapter 1")) {
         Chapter_1()
+    } else if (story.checkLastAnswer("Chapter 2")) {
+        Chapter_2()
     } else {
         Print_Scrolling_Text("try again")
         pause(500)
@@ -292,22 +310,25 @@ function Chapter_1 () {
     pause(1000)
     Select_Chapter()
 }
-function Print_Scrolling_Text (text: string) {
-    Heading = MakingText.createTextSprite(text)
+function Headings () {
+    Heading = MakingText.makeheadings("The Story")
     Heading.ay = -60
     Heading.top = 120
     pause(500)
+    Heading = MakingText.makeheadings("of Toby")
+    Heading.ay = -60
+    Heading.top = 120
+    pause(2000)
 }
-let Script: string[] = []
+function Print_Scrolling_Text (text: string) {
+    Heading = MakingText.createTextSprite(text)
+    Heading.ay = -35
+    Heading.top = 120
+    pause(500)
+}
 let Heading: Sprite = null
-Heading = MakingText.makeheadings("The Story")
-Heading.ay = -60
-Heading.top = 120
-pause(500)
-Heading = MakingText.makeheadings("of Toby")
-Heading.ay = -60
-Heading.top = 120
-pause(2000)
+let Script: string[] = []
+Headings()
 Select_Chapter()
 game.onUpdate(function () {
     for (let value2 of sprites.allOfKind(SpriteKind.Food)) {
